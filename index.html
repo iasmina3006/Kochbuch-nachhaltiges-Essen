@@ -7,36 +7,42 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>🌱 Regionales Kochbuch</h1>
-    <p>Leckere & klimafreundliche Rezepte aus deiner Region!</p>
-    
-    <nav>
-      <a href="index.html">Start</a>
-      <a href="jahreszeiten/fruehling.html">Frühling</a>
-      <a href="jahreszeiten/sommer.html">Sommer</a>
-      <a href="jahreszeiten/herbst.html">Herbst</a>
-      <a href="jahreszeiten/winter.html">Winter</a>
-    </nav>
-  </header>
+<header>
+  <h1>🌱 Regionales Kochbuch</h1>
+  <p>Leckere & klimafreundliche Rezepte aus deiner Region!</p>
+  <nav>
+    <a href="#" class="active">Reset</a>
+    <a href="#">Frühling</a>
+    <a href="#">Sommer</a>
+    <a href="#">Herbst</a>
+    <a href="#">Winter</a>
+  </nav>
+</header>
 
-  <main>
-    <section class="intro">
-      <h2>Warum regional kochen?</h2>
-      <p>Regionale Zutaten bedeuten weniger Transport, frische Produkte und ein kleinerer CO₂-Fußabdruck.</p>
-    </section>
+<main>
+  <section class="filter-section">
+    <h2>Filtern nach Zutaten</h2>
+    <div class="ingredient-filter">
+      <!-- Wird dynamisch mit JS befüllt -->
+    </div>
+  </section>
 
-    <section class="highlight">
-      <h2>🌟 Rezept der Woche</h2>
-      <a href="rezepte/kartoffelsalat.html">
-        <img src="images/kartoffelsalat.jpg" alt="Kartoffelsalat">
-        <p><strong>Kartoffelsalat mit Kräutern</strong></p>
-      </a>
-    </section>
-  </main>
+  <section class="recipe-grid" id="recipeContainer">
+    <!-- Rezeptkacheln werden hier eingefügt -->
+  </section>
 
-  <footer>
-    <p>© 2025 Regionales Kochbuch – Ein Projekt für den Klimaschutz</p>
-  </footer>
+  <div class="modal" id="recipeModal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <div id="modalContent"></div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <p>© 2025 Regionales Kochbuch – Ein Projekt für den Klimaschutz</p>
+</footer>
+
+<script src="script.js"></script>
 </body>
 </html>

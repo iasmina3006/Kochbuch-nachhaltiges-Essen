@@ -141,6 +141,171 @@ footer {
   box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.08);
 }
 
+.recipe-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+  padding: 1rem;
+}
+
+.recipe-card {
+  background: white;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: 0 4px 8px var(--shadow);
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.recipe-card:hover {
+  transform: translateY(-5px);
+}
+
+.recipe-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.recipe-info {
+  padding: 1rem;
+}
+
+.ingredient-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 1rem;
+  justify-content: center;
+}
+
+.filter-chip {
+  background: var(--light-green);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.filter-chip.active {
+  background: var(--green);
+  color: white;
+}
+
+/* Modal Styling */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 100;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.7);
+}
+
+.modal-content {
+  background-color: white;
+  margin: 5% auto;
+  padding: 2rem;
+  border-radius: var(--radius);
+  width: 80%;
+  max-width: 700px;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Zusätzliche CSS-Regeln für die erweiterte Funktionalität */
+
+.recipe-meta {
+  display: flex;
+  gap: 0.8rem;
+  margin: 0.5rem 0;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.season-badge {
+  padding: 0.2rem 0.6rem;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  text-transform: capitalize;
+}
+
+.season-badge.fruehling {
+  background-color: #fce4ec;
+  color: #c2185b;
+}
+
+.season-badge.sommer {
+  background-color: #e3f2fd;
+  color: #1565c0;
+}
+
+.season-badge.herbst {
+  background-color: #fff8e1;
+  color: #e65100;
+}
+
+.season-badge.winter {
+  background-color: #e0f7fa;
+  color: #00838f;
+}
+
+.no-results {
+  text-align: center;
+  grid-column: 1 / -1;
+  padding: 2rem;
+  color: #666;
+}
+
+.modal-header {
+  margin-bottom: 1.5rem;
+}
+
+.modal-image {
+  width: 100%;
+  max-height: 300px;
+  object-fit: cover;
+  border-radius: var(--radius);
+  margin-bottom: 1.5rem;
+}
+
+.modal-body {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 2rem;
+}
+
+.ingredients-section {
+  background: var(--light-green);
+  padding: 1rem;
+  border-radius: var(--radius);
+}
+
+.instructions-section {
+  line-height: 1.8;
+}
+
+@media (max-width: 768px) {
+  .modal-body {
+    grid-template-columns: 1fr;
+  }
+
+  .modal-content {
+    width: 95%;
+    margin: 2% auto;
+  }
+}
+
 @media (max-width: 600px) {
   header h1 {
     font-size: 1.8rem;
@@ -154,4 +319,5 @@ footer {
   .highlight img {
     max-width: 100%;
   }
+
 }

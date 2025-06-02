@@ -148,6 +148,43 @@ function renderRecipes(filteredIngredients = [], season = null) {
   });
 }
 
+const ingredientData = {
+  "festkochende Kartoffeln": { co2: 0.2, price: 1.2 },       // kg CO2, €/kg
+  "Frühlingszwiebeln": { co2: 0.3, price: 1.5 },
+  "Essig": { co2: 0.1, price: 0.8 },
+  "Öl": { co2: 3.0, price: 3.5 },
+  "Senf": { co2: 1.5, price: 2.0 },
+  "Salz": { co2: 0.01, price: 0.2 },
+  "Pfeffer": { co2: 5.0, price: 6.0 },
+  "Petersilie": { co2: 0.4, price: 1.0 },
+  "Mürbeteig": { co2: 2.0, price: 2.5 },
+  "Lauch": { co2: 0.3, price: 1.0 },
+  "Eier": { co2: 4.8, price: 3.0 },
+  "Käse": { co2: 8.5, price: 9.0 },
+  "grüner Spargel": { co2: 0.5, price: 4.0 },
+  "Radieschen": { co2: 0.2, price: 1.2 },
+  "Zitronensaft": { co2: 0.6, price: 2.0 },
+  "Olivenöl": { co2: 6.0, price: 6.5 },
+  "Tomaten": { co2: 0.4, price: 2.2 },
+  "Zwiebel": { co2: 0.1, price: 0.6 },
+  "Basilikum": { co2: 0.4, price: 1.2 },
+  "Quiche-Teig": { co2: 2.2, price: 2.0 },
+  "Zucchini": { co2: 0.3, price: 1.5 },
+  "Sahne": { co2: 2.5, price: 1.8 },
+  "Biskuitboden": { co2: 2.0, price: 1.5 },
+  "Erdbeeren": { co2: 1.1, price: 4.0 },
+  "Tortenguss": { co2: 0.5, price: 1.0 },
+  "Äpfel": { co2: 0.2, price: 2.0 },
+  "Rosinen": { co2: 2.5, price: 3.5 },
+  "Nüsse": { co2: 3.2, price: 8.0 },
+  "Honig": { co2: 2.4, price: 6.0 },
+  "Zimt": { co2: 6.0, price: 20.0 },
+  "Hokkaido-Kürbis": { co2: 0.4, price: 1.8 },
+  "Gemüsebrühe": { co2: 1.0, price: 1.0 },
+  "Kartoffeln": { co2: 0.2, price: 1.2 }
+};
+
+
 // Hilfsfunktion für Saisonnamen
 function getSeasonName(season) {
   const seasons = {
@@ -222,27 +259,44 @@ function openModal(recipe) {
   const modal = document.getElementById('recipeModal');
   const modalContent = document.getElementById('modalContent');
 
+  let totalCO2 = 0;
+  let totalPrice = 0;
+
+  recipe.ingredients.forEach(ing => {
+    const data = ingredientData[ing];
+    if (data) {
+      totalCO2 += data.co2;
+      totalPrice += data.price;
+    }
+  });
+
+
   modalContent.innerHTML = `
-    <div class="modal-header">
-      <h2>${recipe.title}</h2>
-      <div class="recipe-meta">
-        <span class="season-badge ${recipe.season}">${getSeasonName(recipe.season)}</span>
-        <span>${recipe.prepTime}</span>
-        <span>${recipe.difficulty}</span>
+      <div class="modal-header">
+        <h2>${recipe.title}</h2>
+        <div class="recipe-meta">
+          <span class="season-badge ${recipe.season}">${getSeasonName(recipe.season)}</span>
+          <span>${recipe.prepTime}</span>
+          <span>${recipe.difficulty}</span>
+        </div>
       </div>
-    </div>
-    <img src="${recipe.image}" alt="${recipe.title}" class="modal-image">
-    <div class="modal-body">
-      <div class="ingredients-section">
-        <h3>Zutaten:</h3>
-        <ul>${recipe.ingredients.map(ing => `<li>${ing}</li>`).join('')}</ul>
+      <img src="${recipe.image}" alt="${recipe.title}" class="modal-image">
+      <div class="modal-body">
+        <div class="ingredients-section">
+          <h3>Zutaten:</h3>
+          <ul>${recipe.ingredients.map(ing => `<li>${ing}</li>`).join('')}</ul>
+          <div class="co2-cost-box">
+            <h4>CO₂ & Preis (geschätzt):</h4>
+            <p><strong>CO₂ gesamt:</strong> ${totalCO2.toFixed(2)} kg</p>
+            <p><strong>Preis gesamt:</strong> €${totalPrice.toFixed(2)}</p>
+          </div>
+        </div>
+        <div class="instructions-section">
+          <h3>Zubereitung:</h3>
+          <div class="instructions">${recipe.instructions.replace(/\n/g, '<br>')}</div>
+        </div>
       </div>
-      <div class="instructions-section">
-        <h3>Zubereitung:</h3>
-        <div class="instructions">${recipe.instructions.replace(/\n/g, '<br>')}</div>
-      </div>
-    </div>
-  `;
+    `;
 
   modal.style.display = 'block';
 

@@ -1,11 +1,12 @@
 // script.js
+// script.js
 const recipes = [
   {
     id: 1,
     title: "Kartoffelsalat mit Kräutern",
     season: "sommer",
     ingredients: ["festkochende Kartoffeln", "Frühlingszwiebeln", "Essig", "Öl", "Senf", "Salz", "Pfeffer", "Petersilie"],
-    image: "../images/kartoffelsalat.jpg",
+    image: "images/kartoffelsalat.jpg",
     instructions: "1. Kartoffeln kochen, pellen und abkühlen lassen.\n2. In Scheiben schneiden und mit geschnittenen Zwiebeln mischen.\n3. Aus Essig, Öl, Senf und Gewürzen ein Dressing anrühren.\n4. Alles gut vermengen und mit Kräutern garnieren.",
     prepTime: "30 Minuten",
     difficulty: "einfach"
@@ -15,7 +16,7 @@ const recipes = [
     title: "Lauchkuchen",
     season: "herbst",
     ingredients: ["Mürbeteig", "Lauch", "Eier", "Käse"],
-    image: "../images/lauchkuchen.jpg",
+    image: "images/lauchkuchen.jpg",
     instructions: "1. Lauch anbraten, mit Ei-Käse-Mix vermengen.\n2. In Teig geben und 30 Min backen.",
     prepTime: "45 Minuten",
     difficulty: "mittel"
@@ -25,7 +26,7 @@ const recipes = [
     title: "Spargelsalat mit Radieschen",
     season: "fruehling",
     ingredients: ["grüner Spargel", "Radieschen", "Zitronensaft", "Olivenöl", "Salz", "Pfeffer", "Petersilie"],
-    image: "../images/spargelsalat.jpg",
+    image: "images/spargelsalat.jpg",
     instructions: "1. Spargel waschen, Enden abschneiden, kurz kochen oder braten.\n2. Radieschen in Scheiben schneiden.\n3. Alles mit Dressing vermengen und mit Kräutern garnieren.",
     prepTime: "25 Minuten",
     difficulty: "einfach"
@@ -35,7 +36,7 @@ const recipes = [
     title: "Tomatensalat",
     season: "sommer",
     ingredients: ["Tomaten", "Zwiebel", "Essig", "Öl", "Basilikum"],
-    image: "../images/tomatensalat.jpg",
+    image: "images/tomatensalat.jpg",
     instructions: "1. Tomaten und Zwiebeln schneiden.\n2. Mit Dressing und Kräutern vermengen.",
     prepTime: "15 Minuten",
     difficulty: "einfach"
@@ -45,7 +46,7 @@ const recipes = [
     title: "Zucchini-Quiche",
     season: "sommer",
     ingredients: ["Quiche-Teig", "Zucchini", "Sahne", "Eier"],
-    image: "../images/zucchini-quiche.jpg",
+    image: "images/zucchini-quiche.jpg",
     instructions: "1. Zucchini anbraten, auf Teig verteilen.\n2. Guss darübergießen, backen bei 180°C für 35 Min.",
     prepTime: "50 Minuten",
     difficulty: "mittel"
@@ -55,7 +56,7 @@ const recipes = [
     title: "Erdbeerkuchen",
     season: "fruehling",
     ingredients: ["Biskuitboden", "Erdbeeren", "Tortenguss"],
-    image: "../images/erdbeerkuchen.jpg",
+    image: "images/erdbeerkuchen.jpg",
     instructions: "1. Boden mit Erdbeeren belegen.\n2. Guss zubereiten und darübergeben.",
     prepTime: "30 Minuten",
     difficulty: "einfach"
@@ -65,7 +66,7 @@ const recipes = [
     title: "Bratapfel",
     season: "winter",
     ingredients: ["Äpfel", "Rosinen", "Nüsse", "Honig", "Zimt"],
-    image: "../images/bratapfel.jpg",
+    image: "images/bratapfel.jpg",
     instructions: "1. Äpfel aushöhlen, füllen, bei 180°C backen.",
     prepTime: "40 Minuten",
     difficulty: "einfach"
@@ -75,7 +76,7 @@ const recipes = [
     title: "Kürbiscremesuppe",
     season: "herbst",
     ingredients: ["Hokkaido-Kürbis", "Zwiebel", "Gemüsebrühe", "Sahne"],
-    image: "../images/kuerbiscremesuppe.jpg",
+    image: "images/kuerbiscremesuppe.jpg",
     instructions: "1. Kürbis würfeln, anbraten, mit Brühe kochen.\n2. Pürieren, Sahne zugeben, würzen.",
     prepTime: "35 Minuten",
     difficulty: "einfach"
@@ -85,7 +86,7 @@ const recipes = [
     title: "Kartoffelgratin",
     season: "winter",
     ingredients: ["Kartoffeln", "Sahne", "Käse", "Salz", "Pfeffer"],
-    image: "../images/kartoffelgratin.jpg",
+    image: "images/kartoffelgratin.jpg",
     instructions: "1. Kartoffeln hobeln, mit Sahne & Käse schichten.\n2. Backen bei 180°C ca. 40 Minuten.",
     prepTime: "60 Minuten",
     difficulty: "mittel"
